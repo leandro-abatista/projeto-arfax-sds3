@@ -14,13 +14,4 @@ function NavBar() {
     );
 }
 
-/**outra forma de declarar uma função javascript */
-const NavBar2 = () => {
-    return (
-        <div>
-            <h2 className="text-primary">Arfax Tecnologia</h2>
-        </div>
-    );
-}
-
 export default NavBar;
