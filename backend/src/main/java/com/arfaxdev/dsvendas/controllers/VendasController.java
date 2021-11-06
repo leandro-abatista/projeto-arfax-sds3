@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.arfaxdev.dsvendas.dto.SomaVendasDTO;
+import com.arfaxdev.dsvendas.dto.SucessoVendasDTO;
 import com.arfaxdev.dsvendas.dto.VendasDTO;
 import com.arfaxdev.dsvendas.dto.VendedorDTO;
 import com.arfaxdev.dsvendas.service.VendasService;
@@ -25,7 +27,18 @@ public class VendasController {
 	@GetMapping
 	private ResponseEntity<Page<VendasDTO>> findAll(Pageable pageable) {
 		Page<VendasDTO> lista = vendasService.findAll(pageable);
-		
+		return ResponseEntity.ok(lista);
+	}
+	
+	@GetMapping(value = "/soma-by-vendedor")
+	private ResponseEntity<List<SomaVendasDTO>> quantiaVendida() {
+		List<SomaVendasDTO> lista = vendasService.quantiaVendida();
+		return ResponseEntity.ok(lista);
+	}
+	
+	@GetMapping(value = "/sucesso-by-vendedor")
+	private ResponseEntity<List<SucessoVendasDTO>> taxaSucessoAgrupadoPorVendedor() {
+		List<SucessoVendasDTO> lista = vendasService.taxaSucessoAgrupadoPorVendedor();
 		return ResponseEntity.ok(lista);
 	}
 }
