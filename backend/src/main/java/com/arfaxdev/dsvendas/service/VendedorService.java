@@ -1,4 +1,4 @@
-package com.arfaxdev.dsvendas;
+package com.arfaxdev.dsvendas.service;
 
 import java.util.List;
 import java.util.stream.Collectors;

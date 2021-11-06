@@ -24,15 +24,15 @@ public class Vendas {
 	private LocalDate dataVenda;
 
 	/* Isso é uma composição */
-	@ManyToOne/*muitos para um, Muitas vendas para um vendedor*/
+	@ManyToOne /* muitos para um, Muitas vendas para um vendedor */
 	@JoinColumn(name = "vendedor_id")
 	private Vendedor vendedor;
 
 	public Vendas() {
 	}
 
-	public Vendas(Long id, Integer clientesVisitados, Integer negociosFechados, Double quantiaVendida, LocalDate dataVenda,
-			Vendedor vendedor) {
+	public Vendas(Long id, Integer clientesVisitados, Integer negociosFechados, Double quantiaVendida,
+			LocalDate dataVenda, Vendedor vendedor) {
 		super();
 		this.id = id;
 		this.clientesVisitados = clientesVisitados;
